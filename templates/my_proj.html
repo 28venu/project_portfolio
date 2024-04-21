@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} home {% endblock %}
+{% block content %}
+<div align="center">
+<div class="col-md-6">
+    {% for data in datas %}
+    {% if data.user_id == g.id %}
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0"><strong class="d-inline-block mb-2 text-primary-emphasis">{{ data.title }}</strong></h3>
+          <div class="mb-1 text-body-secondary">{{ data.date }}</div>
+          <p class="card-text mb-auto">{{ data.short_des }}</p>
+          <a href="{{ url_for('view',image_id=data.id) }}" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+
+        <div class="col-auto d-none d-lg-block">
+            <img width="276" height="276" src="{{ url_for('get_img', image_id=data.id) }} " alt="upload img">
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+   </div>
+<div align="center">
+<a href="{{ url_for('add') }}">
+    <button  type="button" class="btn btn-info">Add</button> </a>
+</div>
+{% endblock %}

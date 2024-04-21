@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    <h3>{{ head }}</h3>
+    <div class="form-group">
+        <label for="title">project title</label>
+        <input type="text"
+               class="form-control"
+               id="title"
+               name="title"
+               placeholder="enter project title">
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="short">short description</label>
+        <input type="text"
+               class="form-control"
+               id="short"
+               name="short"
+               placeholder="enter short description for ur  project">
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="big">long description</label>
+        <textarea
+               class="form-control"
+               id="big"
+               name="big"
+               placeholder="enter long description for ur  project"></textarea>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="link">link to code</label>
+        <input type="text"
+               class="form-control"
+               id="link"
+               name="link"
+               placeholder="enter long description for ur  project">
+    </div>
+    <br/>
+    <div class="input-group mb-3">
+        <div class="mb-3">
+             <label for="image" class="form-label">upload image of project: </label>
+            <input type="file" class="form-control" id="image" name="image">
+        </div>
+    </div>
+    <br/>
+    <div>
+        <div class="mb-3">
+         <label for="file" class="form-label">upload zip file of project: </label>
+        <input type="file" id="file"  class="form-control" name="file" required>
+        </div>
+    </div>
+    <br/>
+    <button class="btn btn-primary rounded-pill px-3" type="submit">submit</button>
+</form>
+
+{% endblock %}

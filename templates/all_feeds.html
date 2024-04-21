@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}view{% endblock %}
+{% block content %}
+{% if check %}
+{% for msg in msgs %}
+{% if msg.user_id == g.id %}
+<div class="jumbotron p-3 p-md-5 text-white rounded">
+        <div class="col-md-6 px-0">
+            <p class="lead my-3"><strong>{{ msg.title }}</strong></p>
+          <p class="lead my-3">{{ msg.message }}</p>
+          <p class="lead mb-0">from {{ msg.email }}</p>
+        </div>
+</div>
+{% endif %}
+<br/><br/>
+{% endfor %}
+{% else %}
+<div class="nothing">
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/32dc518b-9d5d-4758-ab29-f0af6c675e88/l15JjQG5yx.json" background="transparent" speed="1" style="width: 300px; height: 300px; position: absolute;" loop autoplay><h3>nothing</h3></dotlottie-player>
+<h3 style=" color:#023e8a;padding-top: 150px;
+    padding-left: 350px; font-family: 'Playfair Display', serif;">no feedbacks</h3>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}feedback{% endblock %}
+{% block content %}
+<h1>Feedback</h1>
+<form id="contact_form" name="contact_form" method="post">
+    <div class="mb-5 row">
+        <div class="col">
+            <label>Name</label>
+            <input type="text" required maxlength="50" class="form-control" id="first_name" name="first_name">
+        </div>
+    </div>
+    <div class="mb-5 row">
+        <div class="col">
+            <label for="email_addr">Email address</label>
+            <input type="email" required maxlength="50" class="form-control" id="email_addr" name="email"
+                placeholder="name@example.com">
+        </div>
+    </div>
+    <div class="mb-5">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary px-4 btn-lg">send</button>
+</form>
+{% endblock %}
